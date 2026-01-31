@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 
 const helloLayers = ["hello-svg", "hello-svg delay-1", "hello-svg delay-2"];
 

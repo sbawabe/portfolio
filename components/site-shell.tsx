@@ -11,8 +11,6 @@ import {
   Sidebar,
   SidebarContent,
   SidebarGroup,
-  SidebarGroupLabel,
-  SidebarHeader,
   SidebarInset,
   SidebarMenu,
   SidebarMenuButton,
@@ -29,51 +27,12 @@ export function SiteShell({
 }) {
   const pathname = usePathname()
   const isHome = pathname === "/"
-  const headerRef = React.useRef<HTMLElement | null>(null)
-
-  React.useLayoutEffect(() => {
-    const headerElement = headerRef.current
-    if (!headerElement) {
-      return
-    }
-
-    const root = document.documentElement
-
-    const commitOffset = (height: number) => {
-      root.style.setProperty("--header-height", `${height}px`)
-    }
-
-    const updateOffset = () => {
-      commitOffset(headerElement.getBoundingClientRect().height)
-    }
-
-    updateOffset()
-
-    if (typeof globalThis.ResizeObserver !== "undefined") {
-      const observer = new ResizeObserver((entries) => {
-        const entry = entries[0]
-        if (entry) {
-          commitOffset(entry.contentRect.height)
-        }
-      })
-
-      observer.observe(headerElement)
-      return () => observer.disconnect()
-    }
-
-    const resizeTarget = globalThis as typeof globalThis & {
-      addEventListener?: Window["addEventListener"]
-      removeEventListener?: Window["removeEventListener"]
-    }
-    resizeTarget.addEventListener?.("resize", updateOffset)
-    return () => resizeTarget.removeEventListener?.("resize", updateOffset)
-  }, [])
 
   return (
-    <SidebarProvider defaultOpen={false} className="flex-col">
+    <SidebarProvider defaultOpen={false} className="flex min-h-svh flex-col">
       <header
-        ref={headerRef}
         className="fixed inset-x-0 top-0 z-20 flex w-full items-center justify-between gap-3 border-b border-border bg-background/85 px-4 pb-3 pt-[calc(var(--safe-area-top)+0.5rem)] backdrop-blur"
+        style={{ height: "var(--header-height)" }}
       >
         <Link
           href="/"
@@ -90,7 +49,7 @@ export function SiteShell({
         </Link>
         <HamburgerButton />
       </header>
-      <div className="flex w-full flex-1 min-h-0 pt-[calc(var(--header-height)+var(--safe-area-top))]">
+      <div className="flex w-full flex-1 min-h-0 pt-[var(--header-height)]">
         <SidebarInset className="bg-background min-h-0">
           <div className={isHome ? "flex flex-1 flex-col" : "flex flex-1 flex-col gap-6 p-4 py-10 sm:p-6 lg:px-6 lg:py-12"}>
             {children}
@@ -99,7 +58,10 @@ export function SiteShell({
         <Sidebar
           side="right"
           collapsible="offcanvas"
-          style={{ top: "calc(var(--header-height) + var(--safe-area-top))" }}
+          style={{
+            top: "var(--header-height)",
+            height: "calc(100vh - var(--header-height))",
+          }}
         >
           <SidebarContent className="pt-10">
             <SidebarGroup>
