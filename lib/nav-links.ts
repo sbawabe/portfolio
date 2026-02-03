@@ -6,6 +6,6 @@ export type NavLink = {
 export const navLinks: NavLink[] = [
   { label: "Art & Design", href: "/art-and-design" },
   { label: "Relevant Work", href: "/relevant-work" },
-  { label: "Resume", href: "/resume" },
+  // { label: "Resume", href: "/resume" }, // TODO: Add in
   { label: "About", href: "/about" },
 ]

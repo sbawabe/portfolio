@@ -22,7 +22,7 @@ export default function Home() {
         </div>
         <div className="hello-card white-border-card blue--bold h-fit">
           <h3 className="no-uppercase">
-            My name is Sarah, and I&apos;m a Software Engineer based in New York City. Welcome to my website!
+            My name is Sarah, and I&apos;m a Senior Software Engineer based in New York City. Welcome to my website!
           </h3>
         </div>
       </section>

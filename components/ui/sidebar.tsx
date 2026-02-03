@@ -3,7 +3,7 @@
 import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
-import { PanelLeftIcon } from "lucide-react"
+import { PanelLeftIcon, XIcon } from "lucide-react"
 
 import { useIsMobile } from "@/hooks/use-mobile"
 import { cn } from "@/lib/utils"
@@ -12,6 +12,7 @@ import { Input } from "@/components/ui/input"
 import { Separator } from "@/components/ui/separator"
 import {
   Sheet,
+  SheetClose,
   SheetContent,
   SheetDescription,
   SheetHeader,
@@ -199,7 +200,14 @@ function Sidebar({
             <SheetTitle>Sidebar</SheetTitle>
             <SheetDescription>Displays the mobile sidebar.</SheetDescription>
           </SheetHeader>
-          <div className="flex h-full w-full flex-col">{children}</div>
+          <div className="flex h-full w-full flex-col">
+            <SheetClose asChild>
+              <Button variant="ghost" size="icon" className="absolute top-4 right-4">
+                <XIcon className="size-4" />
+              </Button>
+            </SheetClose>
+            {children}
+          </div>
         </SheetContent>
       </Sheet>
     )

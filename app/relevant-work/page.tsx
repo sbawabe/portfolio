@@ -32,7 +32,7 @@ export default function RelevantWorkPage() {
 
       <div className="work-section reverse">
         <div className="work-image">
-          <Image src="/relevant-work/visual-editor.webp" alt="Fern Onboarding Flow" width={1500} height={1500} className="rounded-md" />
+          <Image src="/relevant-work/visual-editor.webp" alt="Fern Editor" width={1500} height={1500} className="rounded-md" />
         </div>
 
         <div className="work-content">
@@ -51,7 +51,29 @@ export default function RelevantWorkPage() {
         </div>
       </div>
 
+      <div className="work-section">
+        <div className="work-content">
+          <h3>Building the Product Switcher</h3>
+          <p>
+            My first project at Fern was to create a product switcher for Docs customers to use. I was told to take inspiration from
+            other switchers in the industry, and build something that would feel intuitive and polished to Fern's brand. Our first
+            customer to implement the switcher in production was Webflow.
+          </p>
 
-    </section>
+          <Button variant="outline" asChild>
+            <Link href="https://developers.webflow.com/data/docs/getting-started-apps" target="_blank">
+              View Webflow's switcher <ArrowRightIcon className="size-4" />
+            </Link>
+          </Button>
+
+        </div>
+
+        <div className="work-image">
+          <video src="/relevant-work/product-switcher.mp4" autoPlay loop muted width={1500} height={1500} className="rounded-md">
+            <source src="/relevant-work/product-switcher.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </section >
   )
 }
