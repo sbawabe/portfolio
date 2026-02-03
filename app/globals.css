@@ -230,12 +230,12 @@
   }
 
   .home-hero {
-    min-height: calc(100vh - var(--header-height));
+    height: calc(100vh - var(--header-height));
     width: 100%;
     display: flex;
     align-items: flex-end;
     justify-content: flex-start;
-    padding: clamp(1rem, 4vw, 4rem);
+    @apply p-6;
   }
 
   .hello-stack {
@@ -247,8 +247,7 @@
   }
 
   .hello-svg {
-    width: min(100%, 500px);
-    height: auto;
+    @apply w-[80vw] h-auto md:h-[25vh] md:w-auto;
     opacity: 0;
     animation: hello-slide 1.5s ease forwards;
   }
@@ -264,7 +263,7 @@
   }
 
   .hello-card {
-    @apply p-4 w-fit;
+    @apply p-4 w-full md:max-w-[30vw];
     background-color: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(6px);
     animation: hello-rise 2s ease forwards;
@@ -289,6 +288,27 @@
   .hello-links a {
     font-size: 0.7rem;
     letter-spacing: 0.35em;
+  }
+
+  .work-section {
+    @apply flex flex-col gap-4 lg:gap-12 lg:flex-row;
+
+    &.reverse {
+      @apply flex-col-reverse lg:flex-row;
+    }
+
+    .work-content {
+      @apply flex flex-col gap-4 w-full lg:max-w-1/2 justify-center;
+    }
+
+    .work-image {
+      @apply rounded-lg p-4 border border-border w-fit;
+
+      .img {
+        @apply w-full lg:max-w-1/2;
+      }
+
+    }
   }
 
   @media (max-width: 768px) {

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { JetBrains_Mono, Lato } from "next/font/google";
 
 import { SiteShell } from "@/components/site-shell";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 import "./globals.css";
 
@@ -35,6 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${lato.variable} ${jetbrainsMono.variable} antialiased`}>
+        <SpeedInsights />
         <SiteShell>{children}</SiteShell>
       </body>
     </html>

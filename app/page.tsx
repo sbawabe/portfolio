@@ -5,7 +5,7 @@ const helloLayers = ["hello-svg", "hello-svg delay-1", "hello-svg delay-2"];
 export default function Home() {
   return (
     <main className="home-hero">
-      <section className="flex justify-between items-end w-full md:flex-row flex-col gap-8">
+      <section className="flex items-end justify-between w-full md:flex-row flex-col gap-8">
         <div className="hello-stack" aria-hidden="true">
           {helloLayers.map((className, index) => (
             <Image
