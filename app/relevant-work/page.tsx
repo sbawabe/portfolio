@@ -69,7 +69,7 @@ export default function RelevantWorkPage() {
         </div>
 
         <div className="work-image">
-          <video src="/relevant-work/product-switcher.mp4" autoPlay loop muted width={1500} height={1500} className="rounded-md">
+          <video src="/relevant-work/product-switcher.mp4" autoPlay loop muted width={1500} height={1500} className="rounded-md" playsInline>
             <source src="/relevant-work/product-switcher.mp4" type="video/mp4" />
           </video>
         </div>
