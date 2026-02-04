@@ -188,12 +188,21 @@ function Sidebar({
           data-sidebar="sidebar"
           data-slot="sidebar"
           data-mobile="true"
-          className="bg-sidebar text-sidebar-foreground w-(--sidebar-width) p-0 [&>button]:hidden"
+          className={cn(
+            "bg-sidebar text-sidebar-foreground p-0 [&>button]:hidden",
+            "top-[var(--header-height)] bottom-0 left-0 right-0 h-[calc(100svh-var(--header-height))]",
+            "w-full sm:max-w-full border-l-0"
+          )}
           style={
             {
               "--sidebar-width": SIDEBAR_WIDTH_MOBILE,
+              height: "calc(100svh - var(--header-height))",
             } as React.CSSProperties
           }
+          overlayProps={{
+            className:
+              "top-[var(--header-height)] bottom-0 h-[calc(100svh-var(--header-height))]",
+          }}
           side={side}
         >
           <SheetHeader className="sr-only">
@@ -201,11 +210,6 @@ function Sidebar({
             <SheetDescription>Displays the mobile sidebar.</SheetDescription>
           </SheetHeader>
           <div className="flex h-full w-full flex-col">
-            <SheetClose asChild>
-              <Button variant="ghost" size="icon" className="absolute top-4 right-4">
-                <XIcon className="size-4" />
-              </Button>
-            </SheetClose>
             {children}
           </div>
         </SheetContent>
