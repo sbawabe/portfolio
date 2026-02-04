@@ -92,11 +92,11 @@ export default function RelevantWorkPage() {
           <p className="text-sm text-muted-foreground italic -mt-3">4.8 star rating on the App Store!</p>
 
           <div className="flex gap-4 w-full items-end">
-            <div className="work-image max-w-3/4 h-fit">
-              <Image src="/relevant-work/live_activities_watch.png" alt="Live activity watch" width={1500} height={1500} className="rounded-md" />
+            <div className="work-image w-2/3 md:w-3/4 h-fit">
+              <Image src="/relevant-work/live_activities_w.jpg" alt="Live activity watch" width={1500} height={1500} className="rounded-md" />
             </div>
-            <div className="work-image w-1/4">
-              <Image src="/relevant-work/live_activities_phone.png" alt="Live activity phone" width={1500} height={1500} className="rounded-md" />
+            <div className="work-image w-1/3 md:w-1/4">
+              <Image src="/relevant-work/live_activities_p.jpg" alt="Live activity phone" width={1500} height={1500} className="rounded-md" />
             </div>
           </div>
         </div>
@@ -119,8 +119,12 @@ export default function RelevantWorkPage() {
         </div>
         <div className="work-image">
           <div className="flex gap-4">
-            <Image src="/relevant-work/fieldpro.webp" alt="Field Pro" width={1500} height={1000} className="rounded-md" />
-            <Image src="/relevant-work/siro.webp" alt="Field Pro" width={1500} height={1000} className="rounded-md" />
+            <div className="w-1/2">
+              <Image src="/relevant-work/fieldpro.webp" alt="Field Pro" width={1500} height={1000} className="rounded-md" />
+            </div>
+            <div className="w-1/2">
+              <Image src="/relevant-work/siro.webp" alt="Field Pro" width={1500} height={1000} className="rounded-md" />
+            </div>
           </div>
         </div>
       </div>
