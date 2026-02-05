@@ -189,10 +189,9 @@ export default function ArtPage() {
                     width={item.width}
                     height={item.height}
                     className="h-auto w-full object-contain transition duration-500 ease-out group-hover:scale-105 sm:h-[var(--tile-height)] sm:w-auto"
-                    sizes="(min-width: 1600px) 32vw, (min-width: 1024px) 45vw, 95vw"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 45vw, (max-width: 1600px) 32vw, 420px"
                     priority={index < 4}
                     loading={index < 4 ? "eager" : "lazy"}
-                    quality={85}
                   />
                   <div className="pointer-events-none absolute inset-0 flex flex-col justify-end gap-2 bg-gradient-to-t from-black/85 via-black/30 to-transparent px-4 py-5 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
                     <p className="text-base font-semibold tracking-wide">{item.name}</p>
