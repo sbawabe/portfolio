@@ -190,18 +190,18 @@ function Sidebar({
           data-mobile="true"
           className={cn(
             "bg-sidebar text-sidebar-foreground p-0 [&>button]:hidden",
-            "top-[var(--header-height)] bottom-0 left-0 right-0 h-[calc(100svh-var(--header-height))]",
+            "top-[var(--header-height)] bottom-0 left-0 right-0 h-[calc(100vh-var(--header-height))]",
             "w-full sm:max-w-full border-l-0"
           )}
           style={
             {
               "--sidebar-width": SIDEBAR_WIDTH_MOBILE,
-              height: "calc(100svh - var(--header-height))",
+              height: "calc(100vh - var(--header-height))",
             } as React.CSSProperties
           }
           overlayProps={{
             className:
-              "top-[var(--header-height)] bottom-0 h-[calc(100svh-var(--header-height))]",
+              "top-[var(--header-height)] bottom-0 h-[calc(100vh-var(--header-height))]",
           }}
           side={side}
         >
