@@ -2,7 +2,6 @@
 
 import Image from "next/image"
 import * as React from "react"
-import { useInView } from "framer-motion"
 
 import { FadeInTransition } from "@/components/fade-in-transition"
 
@@ -129,18 +128,29 @@ const BATCH_SIZE = 9
 export default function ArtPage() {
   const [visibleCount, setVisibleCount] = React.useState(INITIAL_BATCH)
   const sentinelRef = React.useRef<HTMLDivElement | null>(null)
-  const sentinelInView = useInView(sentinelRef, { margin: "0px 0px 200px 0px" })
   const hasMoreToShow = visibleCount < GALLERY_ITEMS.length
 
   React.useEffect(() => {
-    if (!hasMoreToShow) {
+    const sentinel = sentinelRef.current
+    if (!sentinel || !hasMoreToShow) {
       return
     }
 
-    if (sentinelInView) {
-      setVisibleCount((current) => Math.min(current + BATCH_SIZE, GALLERY_ITEMS.length))
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setVisibleCount((current) => Math.min(current + BATCH_SIZE, GALLERY_ITEMS.length))
+        }
+      },
+      { rootMargin: "0px 0px 200px 0px" }
+    )
+
+    observer.observe(sentinel)
+
+    return () => {
+      observer.disconnect()
     }
-  }, [sentinelInView, hasMoreToShow])
+  }, [hasMoreToShow, visibleCount])
 
   const visibleItems = React.useMemo(() => GALLERY_ITEMS.slice(0, visibleCount), [visibleCount])
 
@@ -150,7 +160,7 @@ export default function ArtPage() {
         <p className="text-sm uppercase tracking-[0.25em] text-muted-foreground">Analog + Digital</p>
         <h1 className="text-4xl font-semibold tracking-tight">Art &amp; Design</h1>
         <p className="max-w-3xl text-base text-muted-foreground">
-          A peek into the drawings, posters, and sticker explorations I have created over the years.
+          A peek into the drawings, posters, and art I have created over the years.
         </p>
       </header>
 
