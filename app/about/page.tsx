@@ -21,8 +21,8 @@ export default function AboutPage() {
           </p>
           <p>
             I’ve always been drawn to the intersection of <b>art, math, and science</b>. I began college studying physics, but everything clicked
-            when I took my first programming (and later, UI/UX) course. At Brown University (Class of 2021), I went on to double major in
-            <b>Computer Science and Astrophysics</b>, with a strong focus on design, and served as the <b>Head Teaching Assistant for UI/UX</b>,
+            when I took my first programming (and later, UI/UX) course. At Brown University (Class of 2021), I went on to double major in{" "}
+            <b>Computer Science and Astrophysics</b>, with a strong focus on design, and served as the <b>Head Teaching Assistant for UI/UX</b>{" "}
             cementing my passion for building beautiful, thoughtful, and impactful products.
           </p>
           <p>Outside of work, you can find me drinking coffee, running, cooking, and playing with my cat, Gouda.🐱</p>
