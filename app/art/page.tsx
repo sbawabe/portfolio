@@ -157,10 +157,10 @@ export default function ArtPage() {
   return (
     <section className="flex flex-col gap-8 pb-16">
       <header className="space-y-3">
-        <p className="text-sm uppercase tracking-[0.25em] text-muted-foreground">Analog + Digital</p>
         <h1 className="text-4xl font-semibold tracking-tight">Art &amp; Design</h1>
         <p className="max-w-3xl text-base text-muted-foreground">
-          A peek into the drawings, posters, and art I have created over the years.
+          Making art has always been a huge part of life. Here's a peek into some drawings, mixed media art, posters,
+          and more that I've created over the years.
         </p>
       </header>
 
