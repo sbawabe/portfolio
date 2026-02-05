@@ -50,7 +50,7 @@ const IMAGE_DIMENSIONS: Record<string, { width: number; height: number }> = {
   "/design/hat_designs-03-min.png": { width: 1151, height: 548 },
   "/design/joinListserv.jpeg": { width: 1500, height: 1621 },
   "/design/lazyLunches-min.jpg": { width: 3703, height: 2250 },
-  "/design/lineup-min.png": { width: 1000, height: 1500 },
+  // "/design/lineup-min.png": { width: 1000, height: 1500 },
   "/design/paintNight-min.jpg": { width: 1229, height: 799 },
   "/design/review_finder_blue-02-min.png": { width: 1311, height: 682 },
 }
@@ -100,7 +100,7 @@ const posterDesigns: ArtworkBase[] = [
   { src: "/design/lazyLunches-min.jpg", name: "Lazy Lunches", category: "Poster Design" },
   { src: "/design/paintNight-min.jpg", name: "Paint Night", category: "Poster Design" },
   { src: "/design/blueno-min.jpg", name: "SW Blueno", category: "Poster Design" },
-  { src: "/design/lineup-min.png", name: "SW Lineup", category: "Poster Design" },
+  // { src: "/design/lineup-min.png", name: "SW Lineup", category: "Poster Design" },
   { src: "/design/gradBooklet-min.jpg", name: "Grad Booklet", category: "Poster Design" },
   { src: "/design/colorado_small-min.jpg", name: "Colorado", category: "Poster Design" },
   { src: "/design/dessertsDG_vertical-01-min.jpg", name: "Desserts DG", category: "Poster Design" },
